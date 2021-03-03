@@ -4,4 +4,4 @@ main: incrafty.maks.Main
 api-version: 1.16
 commands:
   start:
-    description: lancement de la partie
+    description: lancement de la parti
