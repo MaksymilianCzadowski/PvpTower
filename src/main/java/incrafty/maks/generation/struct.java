@@ -28,23 +28,23 @@ public class struct {
         int random = getRandomNumberInRange(1, 5);
         if (random == 1) {
             path = FileSystems.getDefault()
-                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/1.mbt");
+                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/1.nbt");
         }
         if (random == 2) {
             path = FileSystems.getDefault()
-                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/2.mbt");
+                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/2.nbt");
         }
         if (random == 3) {
             path = FileSystems.getDefault()
-                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/3.mbt");
+                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/3.nbt");
         }
         if (random == 4) {
             path = FileSystems.getDefault()
-                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/4.mbt");
+                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/4.nbt");
         }
         if (random == 5) {
             path = FileSystems.getDefault()
-                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/5.mbt");
+                    .getPath("C:/Users/czado/Desktop/serveur/world/generated/minecraft/structures/5.nbt");
         }
         return path;
 
