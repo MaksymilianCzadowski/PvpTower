@@ -3,5 +3,7 @@ version: ${project.version}
 main: incrafty.maks.Main
 api-version: 1.16
 commands:
+  struct:
+    description: generation du struct
   start:
     description: lancement de la parti
