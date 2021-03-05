@@ -23,6 +23,7 @@ public final class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         getCommand("struct").setExecutor(new structCMD());
         struct.loadStruct();
+
     }
 
     @Override
