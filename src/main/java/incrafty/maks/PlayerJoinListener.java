@@ -1,11 +1,13 @@
 package incrafty.maks;
 
+import incrafty.maks.position.GetHeight;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scoreboard.*;
 import org.bukkit.event.Listener;
@@ -59,7 +61,7 @@ public class PlayerJoinListener implements Listener {
         Score death = o.getScore(ChatColor.YELLOW + "Deaths: " + ChatColor.GOLD + player.getStatistic(Statistic.DEATHS));
         death.setScore(4);
 
-        Score equipe = o.getScore("§eTeam: §bbleu");
+        Score equipe = o.getScore(ChatColor.YELLOW + "Floor : §6" + GetHeight.updateHeight(player));
         equipe.setScore(3);
 
         Score space0 = o.getScore("§9 ");
@@ -76,6 +78,10 @@ public class PlayerJoinListener implements Listener {
         for(Player current : Bukkit.getOnlinePlayers()) {
             current.setScoreboard(b);
         }
+    }
+    @EventHandler
+    public void playerMoveEvent(PlayerMoveEvent e){
+        updateScoreboard(e.getPlayer());
     }
 
     @EventHandler
