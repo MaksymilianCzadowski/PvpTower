@@ -83,7 +83,6 @@ public class PlayerJoinListener implements Listener {
 
         updateScoreboard(e.getPlayer());
     }
-
     @EventHandler
     public void onLeave(PlayerQuitEvent event){
 
