@@ -27,6 +27,5 @@ public class GetHeight {
             floor = "7";
         }
         return floor;
-
     }
 }
