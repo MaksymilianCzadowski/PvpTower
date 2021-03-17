@@ -4,13 +4,14 @@ import incrafty.maks.generation.struct;
 import incrafty.maks.generation.structCMD;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import incrafty.maks.startGame.Start;
 
-public final class Main extends JavaPlugin {
+
+
+public final class Main extends JavaPlugin implements Listener {
     private static Main instance;
 
     public static Main getInstance() {
@@ -18,9 +19,13 @@ public final class Main extends JavaPlugin {
     }
     @Override
     public void onEnable() {
+        PluginManager pm  = Bukkit.getPluginManager();
+        pm.registerEvents(new PlayerJoinListener(),this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(),this);
+        Bukkit.getServer().getPluginManager().registerEvents(this,this);
+
         instance = this;
         getCommand("start").setExecutor((CommandExecutor)new Start());
-        PluginManager pm = Bukkit.getPluginManager();
         getCommand("struct").setExecutor(new structCMD());
         struct.loadStruct();
 
@@ -28,10 +33,8 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        getLogger().info( "[Plugin Test] has been disable");
+        super.onDisable();
     }
 
-    public void createTeam(Player player){
-
-    }
 }
