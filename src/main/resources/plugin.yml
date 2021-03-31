@@ -7,3 +7,7 @@ commands:
     description: generation du struct
   start:
     description: lancement de la parti
+  myteam:
+    description: gets your team
+  assign:
+    description: Assigns players to teams

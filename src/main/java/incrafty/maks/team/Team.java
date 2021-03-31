@@ -23,7 +23,7 @@ public class Team {
                 blueTeam.add(player.getName());
                 break;
         }
-        player.sendMessage("Added to " + type.toString() + "team!");
+        player.sendMessage("Added to " + type.name() + "team!");
     }
 
     public static boolean isInTeam(Player player){
@@ -33,4 +33,26 @@ public class Team {
         redTeam.clear();
         blueTeam.clear();
     }
+
+    public static List<String> getRedTeam(){
+        return  redTeam;
+    }
+    public static List<String> getBlueTeam(){
+        return  blueTeam;
+    }
+
+    public static List<String> getAllPLayersInTeals(){
+        List<String> combinedTeams = new ArrayList<String>();
+        combinedTeams.addAll(redTeam);
+        combinedTeams.addAll(blueTeam);
+        return combinedTeams;
+    }
+
+    public  static TeamType getTeamType(Player player){
+        if (!isInTeam(player)){
+            return  null;
+        }
+        return (redTeam.contains(player.getName()) ? TeamType.RED : TeamType.BLUE);
+    }
+
 }

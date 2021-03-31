@@ -29,6 +29,9 @@ public class Game extends JavaPlugin {
                 i++;
             }
         }
+        if(label.equalsIgnoreCase("myteam")){
+            sender.sendMessage(Team.getTeamType(((Player) sender)).name());
+        }
         return true;
     }
 }
